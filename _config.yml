@@ -21,7 +21,7 @@ linkedin_username: mfinkelstine
 additional_links:
   - title: Blog
     icon: fas fa-blog
-    url: https://mfinkels.dev/blog/
+    url: /blog/
   - title: Download CV
     icon: fas fa-file-pdf
     url: https://ln5.sync.com/dl/a4aa41820#rp4rdpwq-7d3ypgwb-j9ibb9xa-qmtvszx8
