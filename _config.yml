@@ -19,9 +19,12 @@ linkedin_username: mfinkelstine
 
 # Additional icon links
 additional_links:
+  - title: Blog
+    icon: fas fa-blog
+    url: /blog/
   - title: Download CV
     icon: fas fa-file-pdf
-    url: https://ln5.sync.com/dl/75353e880#754vyru8-8kxbb4e2-hpqbkmkj-ph27jdip
+    url: https://ln5.sync.com/dl/a4aa41820#rp4rdpwq-7d3ypgwb-j9ibb9xa-qmtvszx8
 
 # About Section
 about_profile_image: images/profile.jpg
@@ -38,7 +41,7 @@ content:
         title: Cisco
         link: https://www.cisco.com
         sub_title: Team Lead of Platform Engineering & SRE
-        caption: January 2023 - Present
+        caption: July 2024 - Present
         description: |
           * Leading infrastructure and platform strategy
           * Architecting AWS + Kubernetes environments
@@ -47,21 +50,23 @@ content:
           * Developing CNAPP & GenAI Incubation platform & IDP
           * Comprehensive CI/CD & GitOps solutions
           * Cloud services, Infra migrations, Microservice security
+
       - layout: left
         title: Check Point Software Technologies
         link: https://www.checkpoint.com
         sub_title: DevOps Engineer - SaaS R&D
-        caption: December 2019 - January 2023
+        caption: November 2018 - January 2024
         description: |
           * Reduced deployment time by 70%
           * Achieved 99.9% uptime
           * Reduced infrastructure cost by 40%
           * Built CI/CD, observability, and automation systems
+
       - layout: left
         title: IBM XIV Storage Systems
         link: https://www.ibm.com
         sub_title: DevOps / Storage Performance Engineer - Onprem Infra/Production
-        caption: December 2016 - December 2019
+        caption: January 2011 - November 2018
         description: |
           * Design of tests, test environment and test results analysis
           * Expertise in performance and system verification testing across IBM’s SAN storage portfolio, A9000, XIV, SVC & Storwize family
@@ -74,7 +79,7 @@ content:
         title: Teva Pharmaceutical Industries
         link: https://www.tevapharm.com
         sub_title: Devops, Storage Engineer - Onprem Infra/Production
-        caption: June 2010 - December 2016
+        caption: June 2001 - January 2011
         description: |
           * Designed, created and maintained CI/CD pipelines per product and engineering requirements.
           * Implemented and maintained Linux/UNIX, storage and data protection solutions at global scale.
