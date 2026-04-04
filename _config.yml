@@ -1,7 +1,176 @@
-title: "Meir Finkelstine"
-description: "SRE Team Leader | Platform Engineering | Cloud Infrastructure"
-url: "https://mfinkels.dev"
-baseurl: ""
-theme: minima
-# Permalink style
-permalink: pretty
+# Site
+repository: meirfi/mfinkels.dev
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Meir Finkelstine
+title: SRE Team Leader | Platform Engineering | Cloud Infrastructure
+email: contact@mfinkels.dev
+
+# Dark Mode (true/false/never)
+darkmode: true
+
+# Social links
+github_username: meirfi
+linkedin_username: mfinkelstine
+
+# Additional icon links
+additional_links:
+  - title: Download CV
+    icon: fas fa-file-pdf
+    url: https://ln5.sync.com/dl/75353e880#754vyru8-8kxbb4e2-hpqbkmkj-ph27jdip
+
+# About Section
+about_profile_image: images/profile.jpg
+about_content: |
+  Passionate about building robust, scalable platforms while driving a sustainable DevEx ecosystem.
+  I enjoy exploring and tackling infra challenges - by distilling complex tasks into simple, reliable processes.
+  Senior Engineer with a curious, self-driven approach, enjoying hands-on deep dives, and refining systems through exploration.
+
+content:
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Cisco
+        link: https://www.cisco.com
+        sub_title: Team Lead of Platform Engineering & SRE
+        caption: January 2023 - Present
+        description: |
+          * Leading infrastructure and platform strategy
+          * Architecting AWS + Kubernetes environments
+          * Driving reliability, monitoring, and incident management
+          * Designing automated IaC systems
+          * Developing CNAPP & GenAI Incubation platform & IDP
+          * Comprehensive CI/CD & GitOps solutions
+          * Cloud services, Infra migrations, Microservice security
+      - layout: left
+        title: Check Point Software Technologies
+        link: https://www.checkpoint.com
+        sub_title: DevOps Engineer - SaaS R&D
+        caption: December 2019 - January 2023
+        description: |
+          * Reduced deployment time by 70%
+          * Achieved 99.9% uptime
+          * Reduced infrastructure cost by 40%
+          * Built CI/CD, observability, and automation systems
+      - layout: left
+        title: IBM XIV Storage Systems
+        link: https://www.ibm.com
+        sub_title: DevOps / Storage Performance Engineer - Onprem Infra/Production
+        caption: December 2016 - December 2019
+        description: |
+          * Design of tests, test environment and test results analysis
+          * Expertise in performance and system verification testing across IBM’s SAN storage portfolio, A9000, XIV, SVC & Storwize family
+          * Performing tests on multiple host environments such as: Linux, Windows, VMWare VDI, LoginVSI, ViewPlanner, VMMark
+          * Developing fabric and VM automation systems for tests in Perl, Bash, Python, PowerShell, PowerCLI
+          * Developing performance graph systems in PHP, Perl & MySQL
+          * Working closely with the development team to improve and optimize the performance of the IBM storage systems
+
+      - layout: left
+        title: Teva Pharmaceutical Industries
+        link: https://www.tevapharm.com
+        sub_title: Devops, Storage Engineer - Onprem Infra/Production
+        caption: June 2010 - December 2016
+        description: |
+          * Designed, created and maintained CI/CD pipelines per product and engineering requirements.
+          * Implemented and maintained Linux/UNIX, storage and data protection solutions at global scale.
+          * Built automation for operations & monitoring using Python, Perl and Bash; managed complex web services.
+          * Led large‑scale projects end‑to‑end with cross‑functional stakeholders.
+
+  - title: Education # Title for the section
+    layout: list # This layout is supported
+    content:
+
+      - layout: left
+        title: Open University of Israel
+        caption: 2003 - 2007
+        sub_title: B.Sc Computer Science
+
+  - title: Certifications # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: AWS Certified Solutions Architect – Associate
+        caption: Amazon Web Services (AWS)
+      - layout: left
+        title: ISTQB CTFL Certificate - Software Testing
+        caption: International Software Testing Qualifications Board (ISTQB)
+
+
+  - title: Tech Stack # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Cloud & Orchestration
+        description: |
+          [![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?logo=amazon-web-services&logoColor=white)](https://aws.amazon.com/) 
+          [![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=google-cloud&logoColor=white)](https://cloud.google.com/) 
+          [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://kubernetes.io/) 
+          [![OpenShift](https://img.shields.io/badge/OpenShift-E10000?style=flat&logo=redhat&logoColor=white)](https://www.openshift.com/) 
+          [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/) 
+          [![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat&logo=helm&logoColor=white)](https://helm.sh/) 
+          [![Kustomize](https://img.shields.io/badge/Kustomize-7E7E7E?style=flat&logo=github&logoColor=white)](https://kustomize.io/)
+
+      - layout: left
+        title: CI/CD & GitOps
+        description: |
+          [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)](https://github.com/features/actions) 
+          [![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat&logo=jenkins&logoColor=white)](https://www.jenkins.io/) 
+          [![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat&logo=argo&logoColor=white)](https://argo-cd.readthedocs.io/en/stable/) 
+          [![Argo Workflows](https://img.shields.io/badge/Argo_Workflows-EF7B4D?style=flat&logo=argo&logoColor=white)](https://argoproj.github.io/workflows/) 
+          [![Temporal](https://img.shields.io/badge/Temporal-2D3E50?style=flat&logo=temporal&logoColor=white)](https://temporal.io/) 
+          [![HashiCorp Vault](https://img.shields.io/badge/HashiCorp_Vault-2664A9?style=flat&logo=hashicorp&logoColor=white)](https://www.vaultproject.io/)
+
+      - layout: left
+        title: IaC & Automation
+        description: |
+          [![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=flat&logo=terraform&logoColor=white)](https://www.terraform.io/) 
+          [![Pulumi](https://img.shields.io/badge/Pulumi-623CE4?style=flat&logo=pulumi&logoColor=white)](https://www.pulumi.com/) 
+          [![AWS CDK](https://img.shields.io/badge/AWS_CDK-FF9900?style=flat&logo=amazon-web-services&logoColor=white)](https://aws.amazon.com/cdk/) 
+          [![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat&logo=ansible&logoColor=white)](https://www.ansible.com/)
+          [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/) 
+          [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+
+      - layout: left
+        title: Observability & Monitoring
+        description: |
+          [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)](https://prometheus.io/) 
+          [![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)](https://grafana.com/) 
+          [![Elastic](https://img.shields.io/badge/Elastic-005571?style=flat&logo=elastic&logoColor=white)](https://www.elastic.co/) 
+          [![ClickHouse](https://img.shields.io/badge/ClickHouse-FFCC01?style=flat&logo=clickhouse&logoColor=white)](https://www.clickhouse.com/) 
+          [![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat&logo=splunk&logoColor=white)](https://www.splunk.com/) 
+          [![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-3B49DF?style=flat&logo=opentelemetry&logoColor=white)](https://opentelemetry.io/)
+
+      - layout: left
+        title: Backend & API
+        description: |
+          [![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white)](https://www.java.com/) 
+          [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/) 
+          [![Go](https://img.shields.io/badge/Go-%2300ADD8.svg?&logo=go&logoColor=white)](https://go.dev/)
+          [![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/) 
+
+      - layout: left
+        title: Databases
+        description: |
+          [![Postgres](https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+          [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff)](https://www.mysql.com/)
+          [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+          [![Redis](https://img.shields.io/badge/Redis-%23DD0031.svg?logo=redis&logoColor=white)](https://redis.io/)
+          [![Cassandra](https://img.shields.io/badge/Cassandra-128783?style=flat&logo=apache-cassandra&logoColor=white)](https://cassandra.apache.org/)
+          [![ClickHouse](https://img.shields.io/badge/ClickHouse-FFCC01?style=flat&logo=clickhouse&logoColor=white)](https://www.clickhouse.com/)
+# Footer
+footer_show_references: true
+
+
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+ - jekyll-seo-tag
+ - jekyll-assets
