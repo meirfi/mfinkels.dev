@@ -1,0 +1,7 @@
+title: "Meir Finkelstine"
+description: "SRE Team Leader | Platform Engineering | Cloud Infrastructure"
+url: "https://mfinkels.dev"
+baseurl: ""
+theme: minima
+# Permalink style
+permalink: pretty
