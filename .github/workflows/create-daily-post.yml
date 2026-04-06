@@ -1,0 +1,65 @@
+name: Create daily blog post draft
+
+on:
+  schedule:
+    # Run at 05:05 UTC (08:05 Asia/Jerusalem) every day
+    - cron: "5 5 * * *"
+      timezone: "Asia/Jerusalem"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    env:
+      TIMEZONE: "Asia/Jerusalem"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate post file
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DATE="$(TZ=$TIMEZONE date +%F)"
+          SLUG="daily-note-${DATE}"
+          FILE="_posts/${DATE}-${SLUG}.md"
+
+          # Skip if it already exists
+          if [ -f "$FILE" ]; then
+            echo "Post already exists: $FILE"
+            exit 0
+          fi
+
+          cat > "$FILE" <<EOF
+---
+layout: post
+title: "Daily Note – ${DATE}"
+date: $(TZ=$TIMEZONE date '+%Y-%m-%d %H:%M:%S %z')
+categories: [daily]
+tags: [notes, blog]
+excerpt: "A short daily note from my work in platform engineering, SRE, and cloud infrastructure."
+---
+
+Today I worked on:
+
+## What I learned
+
+## What was challenging
+
+## One practical takeaway
+EOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          # Commit message and PR details. A timestamp suffix ensures a unique branch each run.
+          commit-message: "chore(blog): add daily post draft"
+          title: "chore(blog): add daily post draft"
+          body: "Daily blog post draft created automatically."
+          base: "main"
+          branch-suffix: timestamp
