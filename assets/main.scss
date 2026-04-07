@@ -3,3 +3,24 @@
 ---
 
 @import 'modern-resume-theme';
+
+/* Custom colour overrides */
+a {
+  color: #1a73e8;
+}
+
+a:hover,
+a:focus {
+  color: #1558b3;
+}
+
+.btn {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #1558b3;
+  color: #ffffff;
+}
