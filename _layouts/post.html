@@ -1,28 +1,117 @@
 ---
-layout: blog-page
 ---
-<article>
-  <header class="post-header">
-    <a href="/blog/" class="post-back">&#8592; Blog</a>
-    <hr class="post-divider">
-    <h1>{{ page.title }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-      {% if page.author %}&bull; {{ page.author }}{% endif %}
-    </p>
-  </header>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+{%- include blog-head.html -%}
+<body>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+  <nav class="blog-topbar">
+    <a href="/" class="topbar-back">&#8592; {{ site.name | escape }}</a>
+    <span class="topbar-label">Blog</span>
+  </nav>
 
-  <div id="comments" class="comments">
-    <script src="https://utteranc.es/client.js"
-            repo="meirfi/mfinkels.dev"
-            issue-term="pathname"
-            theme="github-dark"
-            crossorigin="anonymous"
-            async>
-    </script>
-  </div>
-</article>
+  <main class="post-main" aria-label="Content">
+    <div class="post-layout">
+
+      <article>
+        <header class="post-header">
+          <a href="/blog/" class="post-back">&#8592; Blog</a>
+          <hr class="post-divider">
+          <h1>{{ page.title }}</h1>
+          <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            {% if page.author %}&bull; {{ page.author }}{% endif %}
+          </p>
+        </header>
+
+        <div class="post-content">
+          {{ content }}
+        </div>
+
+        <div id="comments" class="comments">
+          <script src="https://utteranc.es/client.js"
+                  repo="meirfi/mfinkels.dev"
+                  issue-term="pathname"
+                  theme="github-dark"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </article>
+
+      <aside class="toc-sidebar" aria-label="Table of contents">
+        <p class="toc-title">On this page</p>
+        <ul id="toc-list" class="toc-list"></ul>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="blog-footer">
+    &copy; {{ 'now' | date: "%Y" }} {{ site.name | escape }} &mdash;
+    <a href="/">Home</a> &middot; <a href="/blog/">Blog</a>
+  </footer>
+
+  <script>
+    (function () {
+      const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+      const list = document.getElementById('toc-list');
+      if (!headings.length || !list) return;
+
+      // Ensure all headings have stable IDs
+      const seen = {};
+      headings.forEach(function (h) {
+        if (!h.id) {
+          var base = h.textContent.trim().toLowerCase()
+            .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/^-+|-+$/g, '');
+          var id = base;
+          var n = 1;
+          while (seen[id]) { id = base + '-' + (++n); }
+          seen[id] = true;
+          h.id = id;
+        }
+      });
+
+      // Build nested list
+      var currentH2Li = null;
+      headings.forEach(function (h) {
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        a.className = 'toc-link toc-' + h.tagName.toLowerCase();
+        a.dataset.id = h.id;
+
+        var li = document.createElement('li');
+        li.appendChild(a);
+
+        if (h.tagName === 'H2') {
+          list.appendChild(li);
+          currentH2Li = li;
+        } else {
+          var sub = currentH2Li && currentH2Li.querySelector('ul');
+          if (!sub) {
+            sub = document.createElement('ul');
+            (currentH2Li || list).appendChild(sub);
+          }
+          sub.appendChild(li);
+        }
+      });
+
+      // Highlight active section on scroll
+      var links = list.querySelectorAll('.toc-link');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var active = list.querySelector('[data-id="' + entry.target.id + '"]');
+            if (active) active.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-8% 0px -80% 0px', threshold: 0 });
+
+      headings.forEach(function (h) { observer.observe(h); });
+    })();
+  </script>
+
+</body>
+</html>
