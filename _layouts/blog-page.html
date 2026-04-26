@@ -2,53 +2,22 @@
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+{%- include blog-head.html -%}
+<body>
 
-{%- include head.html -%}
+  <nav class="blog-topbar">
+    <a href="/" class="topbar-back">&#8592; {{ site.name | escape }}</a>
+    <span class="topbar-label">Blog</span>
+  </nav>
 
-<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
-
-  <div class="container blog-nav-container">
-    <div class="row">
-      <div class="col-xs-12 blog-nav">
-        <a href="/" class="blog-nav-back">&#8592; {{ site.name | escape }}</a>
-        <span class="blog-nav-title">Blog</span>
-      </div>
-    </div>
-  </div>
-
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
+  <main class="blog-main" aria-label="Content">
+    {{ content }}
   </main>
 
-  {%- include footer.html -%}
+  <footer class="blog-footer">
+    &copy; {{ 'now' | date: "%Y" }} {{ site.name | escape }} &mdash;
+    <a href="/">Home</a> &middot; <a href="/blog/">Blog</a>
+  </footer>
 
 </body>
-
-<style>
-  .blog-nav-container {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #333;
-    margin-bottom: 0;
-  }
-  .blog-nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .blog-nav-back {
-    font-size: 0.9rem;
-    color: #888;
-    text-decoration: none;
-  }
-  .blog-nav-back:hover {
-    color: #fff;
-  }
-  .blog-nav-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-</style>
-
 </html>
